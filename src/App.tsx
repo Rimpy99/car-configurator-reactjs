@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 //GLOBAL STYLES
-import { GlobalStyles } from './global-styles/GlobalStyles';
+import { GlobalStyles } from './globalStyles/GlobalStyles';
 
 //PAGES
 import { HomePage } from './pages/HomePage';
