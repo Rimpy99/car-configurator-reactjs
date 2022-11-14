@@ -4,6 +4,7 @@ import styled from "styled-components";
 import MacanLogo from '../assets/images/models/macan/macanlogo.png';
 import PanameraLogo from '../assets/images/models/panamera/panameralogo.png';
 import Porsche911Logo from '../assets/images/models/p911/p911logo.png';
+import { Link } from 'react-router-dom';
 
 export const HomePage: React.FC = () => {
 
@@ -12,18 +13,24 @@ export const HomePage: React.FC = () => {
             <HomePageContainer>
                 <h1>CHOOSE YOUR PORSCHE</h1>
                 <NavBar>
-                    <Card>
-                        <Model src={MacanLogo}/>
-                        <h2>Macan</h2>
-                    </Card>
-                    <Card>
-                        <Model src={PanameraLogo}/>
-                        <h2>Panamera</h2>
-                    </Card>
-                    <Card>
-                        <Model src={Porsche911Logo}/>
-                        <h2>911 Carrera</h2>
-                    </Card>
+                    <Link to="/porscheMacan" style={{ textDecoration: 'none' }}>
+                        <Card>
+                            <Model src={MacanLogo}/>
+                            <h2>Macan</h2>
+                        </Card>
+                    </Link>
+                    <Link to="/porschePanamera" style={{ textDecoration: 'none' }}>
+                        <Card>
+                            <Model src={PanameraLogo}/>
+                            <h2>Panamera</h2>
+                        </Card>
+                    </Link>
+                    <Link to="/porsche911" style={{ textDecoration: 'none' }}>
+                        <Card>
+                            <Model src={Porsche911Logo}/>
+                            <h2>911 Carrera</h2>
+                        </Card>
+                    </Link>
                 </NavBar>
             </HomePageContainer>
         </>
@@ -50,16 +57,29 @@ const HomePageContainer = styled.div`
 
 const NavBar = styled.div`
     padding-top: 150px;
+    display: flex;
+    border-bottom: 2px solid #ededed;
 `;
 
 const Card = styled.div`
     letter-spacing: 1px;
     margin: 15px;
-    text-align: left;
-    padding: 60px 0;
-
+    padding: 60px 30px;
+    margin: 30px;
+    border-radius: 7px;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid transparent;
+    transition: all .2s ease-in-out;
+    
     h2{
-        padding-left: 20px;
+        font-weight: 100;
+        color: ${headerFontColor};
+    }
+    
+    &:hover{
+        // border: 2px solid ${headerFontColor};
+        background-color: #ededed;
     }
 `;
 
