@@ -1,14 +1,14 @@
 {
-  "main.js": "/car-configurator-reactjs/static/js/main.99c38b8b.chunk.js",
-  "main.js.map": "/car-configurator-reactjs/static/js/main.99c38b8b.chunk.js.map",
-  "static/js/1.70cb5e30.chunk.js": "/car-configurator-reactjs/static/js/1.70cb5e30.chunk.js",
-  "static/js/1.70cb5e30.chunk.js.map": "/car-configurator-reactjs/static/js/1.70cb5e30.chunk.js.map",
+  "main.js": "/car-configurator-reactjs/static/js/main.d2eab7a7.chunk.js",
+  "main.js.map": "/car-configurator-reactjs/static/js/main.d2eab7a7.chunk.js.map",
+  "static/js/1.f1f9948f.chunk.js": "/car-configurator-reactjs/static/js/1.f1f9948f.chunk.js",
+  "static/js/1.f1f9948f.chunk.js.map": "/car-configurator-reactjs/static/js/1.f1f9948f.chunk.js.map",
   "runtime~main.js": "/car-configurator-reactjs/static/js/runtime~main.500822c1.js",
   "runtime~main.js.map": "/car-configurator-reactjs/static/js/runtime~main.500822c1.js.map",
   "static/media/macanlogo.png": "/car-configurator-reactjs/static/media/macanlogo.9dc32e96.png",
   "static/media/panameralogo.png": "/car-configurator-reactjs/static/media/panameralogo.0a61ebc7.png",
   "static/media/p911logo.png": "/car-configurator-reactjs/static/media/p911logo.6d84252d.png",
   "index.html": "/car-configurator-reactjs/index.html",
-  "precache-manifest.ca1051cbbd5d7ba70144aa74b504d4f5.js": "/car-configurator-reactjs/precache-manifest.ca1051cbbd5d7ba70144aa74b504d4f5.js",
+  "precache-manifest.784bacf85823e7de4700c4a0813432bf.js": "/car-configurator-reactjs/precache-manifest.784bacf85823e7de4700c4a0813432bf.js",
   "service-worker.js": "/car-configurator-reactjs/service-worker.js"
 }

@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "99c38b8b4d3397a8b399",
-    "url": "/car-configurator-reactjs/static/js/main.99c38b8b.chunk.js"
+    "revision": "d2eab7a748c8074bc0f0",
+    "url": "/car-configurator-reactjs/static/js/main.d2eab7a7.chunk.js"
   },
   {
-    "revision": "70cb5e30dbb0ef654c81",
-    "url": "/car-configurator-reactjs/static/js/1.70cb5e30.chunk.js"
+    "revision": "f1f9948f6d392fc13ca6",
+    "url": "/car-configurator-reactjs/static/js/1.f1f9948f.chunk.js"
   },
   {
     "revision": "500822c1ef6eb643580b",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/car-configurator-reactjs/static/media/p911logo.6d84252d.png"
   },
   {
-    "revision": "6a34732485e0abed52fa84bf430f692d",
+    "revision": "22797429bc73d70ce94aca3eaaa90495",
     "url": "/car-configurator-reactjs/index.html"
   }
 ];
