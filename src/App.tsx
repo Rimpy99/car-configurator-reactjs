@@ -5,8 +5,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { GlobalStyles } from './globalStyles/GlobalStyles';
 
 //PAGES
-import { HomePage } from './pages/HomePage';
-import { CarConfigurator } from './pages/CarConfigurator';
+import { HomePage } from './pages/HomePage/HomePage';
+import { CarConfigurator } from './pages/CarConfigurator/CarConfigurator';
 
 function App() {
   return (

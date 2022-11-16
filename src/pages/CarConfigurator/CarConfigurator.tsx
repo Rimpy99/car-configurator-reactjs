@@ -4,7 +4,7 @@ export const CarConfigurator: React.FC = () => {
 
     return (
         <>
-            HELLO!
+            <p>konfigurator</p>
         </>
     )
 }
