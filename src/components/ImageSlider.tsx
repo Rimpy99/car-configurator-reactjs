@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
-
 export const ImageSlider: React.FC = () => {
 
     const sliderSettings = {
@@ -11,12 +10,20 @@ export const ImageSlider: React.FC = () => {
         slidesToScroll: 1
     }
 
+    const [ , ] = useState('');
+    const [variant, setVariant] = useState({
+        color: 'white',
+        rims: 'false',
+    });
+
+    // useEffect(() => {
+        
+    // }, [carColor])
+
     return(
-        <>
+        <> 
             <Slider {...sliderSettings}>
-                <div style={{backgroundColor: 'red'}}></div>
-                <div style={{backgroundColor: 'yellow'}}></div>
-                <div style={{backgroundColor: 'green'}}></div>
+                <img src={macanOptions.basic.black.p1} />
             </Slider>
         </>
     );
