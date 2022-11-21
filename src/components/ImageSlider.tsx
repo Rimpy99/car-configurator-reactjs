@@ -8,7 +8,7 @@ type arrayOfImages = {
 }
 
 type Props = {
-    images: arrayOfImages
+    images: arrayOfImages,
 }
 
 export const ImageSlider = ({images}: Props) => {

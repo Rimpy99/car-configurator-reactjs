@@ -4,7 +4,6 @@ import { ImageSlider } from "../ImageSlider";
 //img imports
 import macan from '../../assets/images/models/macan/macan.json';
 
-
 type Props ={
     car: string,
 }

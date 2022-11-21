@@ -18,19 +18,19 @@
    },
    "rims": {
         "black": {
-            "img1": "../assets/images/models/macan/macanblack1rims.jpg'",
-            "img2": "../assets/images/models/macan/macanblack2rims.jpg'",
-            "img3": "../assets/images/models/macan/macanblack3rims.jpg'"
+            "img1": "../assets/images/models/macan/rims/macanblack1rims.jpg'",
+            "img2": "../assets/images/models/macan/rims/macanblack2rims.jpg'",
+            "img3": "../assets/images/models/macan/rims/macanblack3rims.jpg'"
         },
         "white": {
-            "img1": "../assets/images/models/macan/macanwhite1rims.jpg'",
-            "img2": "../assets/images/models/macan/macanwhite2rims.jpg'",
-            "img3": "../assets/images/models/macan/macanwhite3rims.jpg'"
+            "img1": "../assets/images/models/macan/rims/macanwhite1rims.jpg'",
+            "img2": "../assets/images/models/macan/rims/macanwhite2rims.jpg'",
+            "img3": "../assets/images/models/macan/rims/macanwhite3rims.jpg'"
         },
         "blue": {
-            "img1": "../assets/images/models/macan/macanblue1rims.jpg'",
-            "img2": "../assets/images/models/macan/macanblue2rims.jpg'",
-            "img3": "../assets/images/models/macan/macanblue3rims.jpg'"
+            "img1": "../assets/images/models/macan/rims/macanblue1rims.jpg'",
+            "img2": "../assets/images/models/macan/rims/macanblue2rims.jpg'",
+            "img3": "../assets/images/models/macan/rims/macanblue3rims.jpg'"
         }
    }
 }

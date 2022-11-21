@@ -1,0 +1,36 @@
+{
+   "basic": {
+        "black": {
+            "img1": "../assets/images/models/p911/p911black1.jpg'",
+            "img2": "../assets/images/models/p911/p911black2.jpg'",
+            "img3": "../assets/images/models/p911/p911black3.jpg'"
+        },
+        "white": {
+            "img1": "../assets/images/models/p911/p911white1.jpg'",
+            "img2": "../assets/images/models/p911/p911white2.jpg'",
+            "img3": "../assets/images/models/p911/p911white3.jpg'"
+        },
+        "red": {
+            "img1": "../assets/images/models/p911/p911red1.jpg'",
+            "img2": "../assets/images/models/p911/p911red2.jpg'",
+            "img3": "../assets/images/models/p911/p911red3.jpg'"
+        }
+   },
+   "rims": {
+        "black": {
+            "img1": "../assets/images/models/p911/rims/p911black1rims.jpg'",
+            "img2": "../assets/images/models/p911/rims/p911black2rims.jpg'",
+            "img3": "../assets/images/models/p911/rims/p911black3rims.jpg'"
+        },
+        "white": {
+            "img1": "../assets/images/models/p911/rims/p911white1rims.jpg'",
+            "img2": "../assets/images/models/p911/rims/p911white2rims.jpg'",
+            "img3": "../assets/images/models/p911/rims/p911white3rims.jpg'"
+        },
+        "red": {
+            "img1": "../assets/images/models/p911/rims/p911red1rims.jpg'",
+            "img2": "../assets/images/models/p911/rims/p911red2rims.jpg'",
+            "img3": "../assets/images/models/p911/rims/p911red3rims.jpg'"
+        }
+   }
+}
