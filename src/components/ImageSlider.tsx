@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
-export const ImageSlider: React.FC = () => {
+
+type arrayOfImages = {
+    img1: string,
+    img2: string,
+    img3: string,
+}
+
+type Props = {
+    images: arrayOfImages
+}
+
+export const ImageSlider = ({images}: Props) => {
 
     const sliderSettings = {
         dots: true,
@@ -23,7 +34,7 @@ export const ImageSlider: React.FC = () => {
     return(
         <> 
             <Slider {...sliderSettings}>
-                <img src={macanOptions.basic.black.p1} />
+                {/* <img src={macanOptions.basic.black.p1} /> */}
             </Slider>
         </>
     );
