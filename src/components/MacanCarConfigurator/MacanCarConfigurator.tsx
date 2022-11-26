@@ -12,15 +12,15 @@ import macanBlue1 from '../../assets/images/models/macan/macanblue1.jpg';
 import macanBlue2 from '../../assets/images/models/macan/macanblue2.jpg';
 import macanBlue3 from '../../assets/images/models/macan/macanblue3.jpg';
 
-import macanBlack1Rims from '../../assets/images/models/macan/macanblack1rims.jpg';
-import macanBlack2Rims from '../../assets/images/models/macan/macanblack2rims.jpg';
-import macanBlack3Rims from '../../assets/images/models/macan/macanblack3rims.jpg';
-import macanWhite1Rims from '../../assets/images/models/macan/macanwhite1rims.jpg';
-import macanWhite2Rims from '../../assets/images/models/macan/macanwhite2rims.jpg';
-import macanWhite3Rims from '../../assets/images/models/macan/macanwhite3rims.jpg';
-import macanBlue1Rims from '../../assets/images/models/macan/macanblue1rims.jpg';
-import macanBlue2Rims from '../../assets/images/models/macan/macanblue2rims.jpg';
-import macanBlue3Rims from '../../assets/images/models/macan/macanblue3rims.jpg';
+import macanBlack1Rims from '../../assets/images/models/macan/rims/macanblack1rims.jpg';
+import macanBlack2Rims from '../../assets/images/models/macan/rims/macanblack2rims.jpg';
+import macanBlack3Rims from '../../assets/images/models/macan/rims/macanblack3rims.jpg';
+import macanWhite1Rims from '../../assets/images/models/macan/rims/macanwhite1rims.jpg';
+import macanWhite2Rims from '../../assets/images/models/macan/rims/macanwhite2rims.jpg';
+import macanWhite3Rims from '../../assets/images/models/macan/rims/macanwhite3rims.jpg';
+import macanBlue1Rims from '../../assets/images/models/macan/rims/macanblue1rims.jpg';
+import macanBlue2Rims from '../../assets/images/models/macan/rims/macanblue2rims.jpg';
+import macanBlue3Rims from '../../assets/images/models/macan/rims/macanblue3rims.jpg';
 
 type Props ={
     car: string,
@@ -37,25 +37,25 @@ export const MacanCarConfigurator = ({car}: Props) => {
         if(rims){
             switch(color){
                 case 'white':
-                    setImages(macan.rims.white);
+                    setImages([macanWhite1Rims, macanWhite2Rims, macanWhite3Rims]);
                     break;
                 case 'black':
-                    setImages(macan.rims.black);
+                    setImages([macanBlack1Rims, macanBlack2Rims, macanBlack3Rims]);
                     break;
                 case 'blue':
-                    setImages(macan.rims.blue);
+                    setImages([macanBlue1Rims, macanBlue2Rims, macanBlue3Rims]);
                     break;
             }
         }else{
             switch(color){
                 case 'white':
-                    setImages(macan.basic.white);
+                    setImages([macanWhite1, macanWhite2, macanWhite3]);
                     break;
                 case 'black':
-                    setImages(macan.basic.black);
+                    setImages([macanBlack1, macanBlack2, macanBlack3]);
                     break;
                 case 'blue':
-                    setImages(macan.basic.blue);
+                    setImages([macanBlue1, macanBlue2, macanBlue3]);
                     break;
             }
         }
@@ -65,7 +65,7 @@ export const MacanCarConfigurator = ({car}: Props) => {
     return(
         <>
             <header>{car.toUpperCase()} CONFIGURATOR</header>
-            {/* <ImageSlider images={images}/> */}
+            <ImageSlider images={images}/>
             {/* <img src={require('../../assets/images/models/macan/macanblack1.jpg')} alt="nie" /> */}
         </>
     )
