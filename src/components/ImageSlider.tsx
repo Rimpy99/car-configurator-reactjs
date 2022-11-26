@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 
-type arrayOfImages = {
-    img1: string,
-    img2: string,
-    img3: string,
-}
-
 type Props = {
-    images: arrayOfImages,
+    images: string[],
 }
 
 export const ImageSlider = ({images}: Props) => {
+
+    // const imagesArray = [PANAMERA_IMAGES.basic.white.img1, PANAMERA_IMAGES.basic.white.img2, PANAMERA_IMAGES.basic.white.img3];
+
+    // console.log(PANAMERA_IMAGES);
 
     const sliderSettings = {
         dots: true,
@@ -21,21 +19,18 @@ export const ImageSlider = ({images}: Props) => {
         slidesToScroll: 1
     }
 
-    const [ , ] = useState('');
-    const [variant, setVariant] = useState({
-        color: 'white',
-        rims: 'false',
-    });
-
-    // useEffect(() => {
-        
-    // }, [carColor])
+    console.log(images)
 
     return(
-        <> 
-            <Slider {...sliderSettings}>
-                {/* <img src={macanOptions.basic.black.p1} /> */}
-            </Slider>
-        </>
+        <div> 
+            {/* {imagesArray.map(img => {
+                    return(
+                        <img src={img} alt='teeeeeeeeeeee'/>
+                    )
+            })} */}
+            <img src={images[2]} alt="t" />
+            {/* <img src={require()} alt="" /> */}
+        </div>
     );
 }
+

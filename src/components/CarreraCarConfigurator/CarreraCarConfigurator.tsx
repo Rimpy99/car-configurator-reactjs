@@ -47,7 +47,7 @@ export const CarreraCarConfigurator = ({car}: Props) => {
     return(
         <>
             <header>{car.toUpperCase()} CONFIGURATOR</header>
-            <ImageSlider images={images}/>
+            {/* <ImageSlider images={images}/> */}
             <img src={require('../../assets/images/models/macan/macanblack1.jpg')} alt="nie" />
         </>
     )
