@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/car-configurator-reactjs/precache-manifest.655db271220ef1263d5885bb804bebc1.js"
+  "/car-configurator-reactjs/precache-manifest.ae7d708da2c525cd5a4cc6d8a4dd8b0e.js"
 );
 
 workbox.clientsClaim();
