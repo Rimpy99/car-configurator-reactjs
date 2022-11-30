@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ImageSlider } from "../ImageSlider";
+import styled from "styled-components";
+
+import { Header } from "../Header/Header";
 
 //img imports
 import panameraBlack1 from '../../assets/images/models/panamera/panamerablack1.jpg';
@@ -51,8 +54,21 @@ export const PanameraCarConfigurator = ({car}: Props) => {
 
     return(
         <>
-            <header>{car.toUpperCase()} CONFIGURATOR</header>
-            <ImageSlider images={images}/>
+            <Header carModel={car.toUpperCase()}/>
+            <Container>
+                <ImageSlider images={images}/>
+                <RightDiv />
+            </Container>
         </>
     )
 }
+
+const Container = styled.div`
+    display: flex;
+`
+
+const RightDiv = styled.div`
+    width: 300px;
+    height: 200px;
+    background-color: purple;
+`

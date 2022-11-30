@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ImageSlider } from "../ImageSlider";
 
+import { Header } from "../Header/Header";
+
 //img imports
 import macanBlack1 from '../../assets/images/models/macan/macanblack1.jpg';
 import macanBlack2 from '../../assets/images/models/macan/macanblack2.jpg';
@@ -64,7 +66,7 @@ export const MacanCarConfigurator = ({car}: Props) => {
 
     return(
         <>
-            <header>{car.toUpperCase()} CONFIGURATOR</header>
+            <Header carModel={car.toUpperCase()}/>
             <ImageSlider images={images}/>
         </>
     )
