@@ -5,7 +5,7 @@ type Props = {
     images: string[],
 }
 
-const slideSize = 800;
+const slideSize = 2000;
 
 export const ImageSlider = ({images}: Props) => {
 

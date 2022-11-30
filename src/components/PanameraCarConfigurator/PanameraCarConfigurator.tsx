@@ -65,6 +65,7 @@ export const PanameraCarConfigurator = ({car}: Props) => {
 
 const Container = styled.div`
     display: flex;
+    background-color: #F5F5F5;
 `
 
 const RightDiv = styled.div`

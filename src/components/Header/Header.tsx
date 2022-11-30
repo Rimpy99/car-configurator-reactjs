@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
 
 import { BiArrowBack } from "react-icons/bi";
 
@@ -9,9 +10,11 @@ type Props = {
 
 export const Header = ({carModel}: Props) => {
 
+    const navigate = useNavigate();
+
     return(
         <Container>
-            <IconContainer>
+            <IconContainer onClick={() => navigate('/')}>
                 <BiArrowBack size={25}/>
             </IconContainer>
             <h1>{carModel} CONFIGURATOR</h1>
