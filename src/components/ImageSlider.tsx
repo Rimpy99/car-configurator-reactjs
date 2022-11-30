@@ -5,6 +5,8 @@ type Props = {
     images: string[],
 }
 
+const slideSize = 800;
+
 export const ImageSlider = ({images}: Props) => {
 
     const [slide0, setSlide0] = useState<number>(0)
@@ -19,11 +21,11 @@ export const ImageSlider = ({images}: Props) => {
     }, [visibleSlide])
 
     const goRight = () => {
-        setSlide0(slide0 - 500);
-        setSlide1(slide1 - 500);
-        setSlide2(slide2 - 500);
-        setSlide3(slide3 - 500);
-        setSlide4(slide4 - 500);
+        setSlide0(slide0 - slideSize);
+        setSlide1(slide1 - slideSize);
+        setSlide2(slide2 - slideSize);
+        setSlide3(slide3 - slideSize);
+        setSlide4(slide4 - slideSize);
 
         if(visibleSlide === 3){
             setTimeout(() => {
@@ -32,16 +34,14 @@ export const ImageSlider = ({images}: Props) => {
         }else{
             setVisibleSlide(current => current + 1);
         }
-
-
     }
 
     const goLeft = () => {
-        setSlide0(slide0 + 500);
-        setSlide1(slide1 + 500);
-        setSlide2(slide2 + 500);
-        setSlide3(slide3 + 500);
-        setSlide4(slide4 + 500);
+        setSlide0(slide0 + slideSize);
+        setSlide1(slide1 + slideSize);
+        setSlide2(slide2 + slideSize);
+        setSlide3(slide3 + slideSize);
+        setSlide4(slide4 + slideSize);
 
         if(visibleSlide === 1){
             setTimeout(() => {
@@ -50,20 +50,9 @@ export const ImageSlider = ({images}: Props) => {
         }else{
             setVisibleSlide(current => current - 1);
         }
-
-
     }
 
     useEffect(() => {
-        // visibleSlide === 4 && setTimeout(() => {
-        //     setSlide0(0);
-        //     setSlide1(0);
-        //     setSlide2(0);
-        //     setSlide3(0);
-        //     setSlide4(0);
-        //     setVisibleSlide(1);
-        //     console.log(visibleSlide);
-        // }, 500)
         if(visibleSlide === 4){
             setSlide0(0);
             setSlide1(0);
@@ -76,11 +65,11 @@ export const ImageSlider = ({images}: Props) => {
             }, 50);
 
         }else if(visibleSlide === 0){
-            setSlide0(-1000);
-            setSlide1(-1000);
-            setSlide2(-1000);
-            setSlide3(-1000);
-            setSlide4(-1000);
+            setSlide0(-(2*slideSize));
+            setSlide1(-(2*slideSize));
+            setSlide2(-(2*slideSize));
+            setSlide3(-(2*slideSize));
+            setSlide4(-(2*slideSize));
 
             setTimeout(() => {
                 setVisibleSlide(3);
@@ -88,19 +77,6 @@ export const ImageSlider = ({images}: Props) => {
 
         }
     }, [visibleSlide])
-
-    // useEffect(() => {
-    //     visibleSlide === 0 && setTimeout(() => {
-    //         setSlide0(-1000);
-    //         setSlide1(-1000);
-    //         setSlide2(-1000);
-    //         setSlide3(-1000);
-    //         setSlide4(-1000);
-    //         setVisibleSlide(3);
-    //         console.log(visibleSlide);
-    //     }, 500)
-    // }, [visibleSlide])
-
 
     return(
         <div> 
@@ -129,8 +105,8 @@ const SlideImg = styled.img`
 const SliderContent = styled.div`
     display: flex;
     flex-wrap: nowrap;
-    width: 500px;
-    transform: translateX(-500px);
+    width: ${slideSize}px;
+    transform: translateX(-${slideSize}px);
     background-color: right;
     // overflow: hidden;
 `;
@@ -140,6 +116,6 @@ const SliderContainer = styled.div`
     flex-wrap: nowrap;
     background-color: right;
     overflow: hidden;
-    width: 500px;
+    width: ${slideSize}px;
 `
 
