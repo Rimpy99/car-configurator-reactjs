@@ -55,21 +55,31 @@ export const PanameraCarConfigurator = ({car}: Props) => {
     return(
         <>
             <Header carModel={car.toUpperCase()}/>
-            <Container>
-                <ImageSlider images={images}/>
-                <RightDiv />
-            </Container>
+            <ContentContainer>
+                <Content>
+                    <ImageSlider images={images}/>
+                    <RightDiv />
+                </Content>
+            </ContentContainer>
         </>
     )
 }
 
-const Container = styled.div`
+const ContentContainer = styled.div`
     display: flex;
+    align-items: center;
     background-color: #F5F5F5;
-`
+`;
+
+const Content = styled.div`
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+`;
 
 const RightDiv = styled.div`
     width: 300px;
     height: 200px;
     background-color: purple;
-`
+`;
