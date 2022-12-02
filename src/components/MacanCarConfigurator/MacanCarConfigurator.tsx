@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 
-import { ImageSlider } from "../ImageSlider/ImageSlider";
-import { Header } from "../Header/Header";
+import { CarConfiguratorContent } from "../CarConfiguratorContent/CarConfiguratorContent";
 
 //img imports
 import macanBlack1 from '../../assets/images/models/macan/macanblack1.jpg';
@@ -67,32 +65,7 @@ export const MacanCarConfigurator = ({car}: Props) => {
 
     return(
         <>
-            <Header carModel={car.toUpperCase()}/>
-            <ContentContainer>
-                <Content>
-                    <ImageSlider images={images}/>
-                    <RightDiv />
-                </Content>
-            </ContentContainer>
+            <CarConfiguratorContent car={car} images={images}/>
         </>
     )
 }
-
-const ContentContainer = styled.div`
-    display: flex;
-    align-items: center;
-    background-color: #F5F5F5;
-`;
-
-const Content = styled.div`
-    width: 100%;
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-`;
-
-const RightDiv = styled.div`
-    width: 300px;
-    height: 200px;
-    background-color: purple;
-`;
