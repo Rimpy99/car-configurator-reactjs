@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ImageSlider } from "../ImageSlider";
+import { ImageSlider } from "../ImageSlider/ImageSlider";
 import styled from "styled-components";
 
 import { Header } from "../Header/Header";

@@ -58,7 +58,7 @@ export const ImageSlider = ({images}: Props) => {
         if(visibleSlide === 3){
             setTimeout(() => {
                 setVisibleSlide(current => current + 1);
-            }, 300);
+            }, 488);
         }else{
             setVisibleSlide(current => current + 1);
         }
@@ -74,7 +74,7 @@ export const ImageSlider = ({images}: Props) => {
         if(visibleSlide === 1){
             setTimeout(() => {
                 setVisibleSlide(current => current - 1);
-            }, 300);
+            }, 488);
         }else{
             setVisibleSlide(current => current - 1);
         }
@@ -90,7 +90,7 @@ export const ImageSlider = ({images}: Props) => {
 
             setTimeout(() => {
                 setVisibleSlide(1);
-            }, 50);
+            }, 5);
 
         }else if(visibleSlide === 0){
             setSlide0(-(2*slideSize.innerWidth));
@@ -101,7 +101,7 @@ export const ImageSlider = ({images}: Props) => {
 
             setTimeout(() => {
                 setVisibleSlide(3);
-            }, 50);
+            }, 5);
 
         }
     }, [visibleSlide])
@@ -110,11 +110,11 @@ export const ImageSlider = ({images}: Props) => {
         <div> 
             <SliderContainer size={slideSize}>
                 <SliderContent size={slideSize}>
-                    <SlideImg src={images[2]} alt="slide3" style={{ transform: `translateX(${slide0}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .3s ease-in-out'}}/>
-                    <SlideImg src={images[0]} alt="slide1" style={{ transform: `translateX(${slide1}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .3s ease-in-out'}}/>
-                    <SlideImg src={images[1]} alt="slide2" style={{ transform: `translateX(${slide2}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .3s ease-in-out'}}/>
-                    <SlideImg src={images[2]} alt="slide3" style={{ transform: `translateX(${slide3}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .3s ease-in-out'}}/>
-                    <SlideImg src={images[0]} alt="slide1" style={{ transform: `translateX(${slide4}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .3s ease-in-out'}}/>
+                    <SlideImg src={images[2]} alt="slide3" style={{ transform: `translateX(${slide0}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
+                    <SlideImg src={images[0]} alt="slide1" style={{ transform: `translateX(${slide1}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
+                    <SlideImg src={images[1]} alt="slide2" style={{ transform: `translateX(${slide2}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
+                    <SlideImg src={images[2]} alt="slide3" style={{ transform: `translateX(${slide3}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
+                    <SlideImg src={images[0]} alt="slide1" style={{ transform: `translateX(${slide4}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
                 </SliderContent>
                 <SliderLeftButton onClick={() => goLeft()}><FaChevronLeft size={30} color="white"/></SliderLeftButton>
                 <SliderRightButton onClick={() => goRight()}><FaChevronRight size={30} color="white"/></SliderRightButton>
