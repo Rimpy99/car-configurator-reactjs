@@ -21,7 +21,7 @@ export const CarConfiguratorContent = ({car, images, colors, setColor, setRims}:
             <ContentContainer>
                 <Content>
                     <ImageSlider images={images}/>
-                    <Options colors={colors}/>
+                    <Options colors={colors} setColor={setColor} setRims={setRims}/>
                 </Content>
             </ContentContainer>
         </>
