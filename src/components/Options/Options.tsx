@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const Options = () => {
+type Props = {
+    colors: string[],
+}
+
+export const Options = ({colors}: Props) => {
 
     return(
         <>

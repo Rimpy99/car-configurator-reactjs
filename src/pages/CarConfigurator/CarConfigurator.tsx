@@ -14,7 +14,7 @@ export const CarConfigurator: React.FC = () => {
         <>
             {location.pathname === '/porscheMacan' ? <MacanCarConfigurator car={"macan"}/> : null}
             {location.pathname === '/porschePanamera' ? <PanameraCarConfigurator car={"panamera"}/> : null}
-            {location.pathname === '/porsche911' ? <CarreraCarConfigurator car={"carrera"}/> : null}
+            {location.pathname === '/porsche911' ? <CarreraCarConfigurator car={"carrera 911"}/> : null}
         </>
     )
 }

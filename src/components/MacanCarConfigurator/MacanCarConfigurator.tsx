@@ -33,6 +33,8 @@ export const MacanCarConfigurator = ({car}: Props) => {
     const [color, setColor] = useState<string>('white');
     const [rims, setRims] = useState<boolean>(false);
 
+    const colors = ['white', 'black', 'blue'];
+
     useEffect(() => {
 
         if(rims){
@@ -65,7 +67,7 @@ export const MacanCarConfigurator = ({car}: Props) => {
 
     return(
         <>
-            <CarConfiguratorContent car={car} images={images}/>
+            <CarConfiguratorContent car={car} images={images} colors={colors} setColor={setColor} setRims={setRims}/>
         </>
     )
 }

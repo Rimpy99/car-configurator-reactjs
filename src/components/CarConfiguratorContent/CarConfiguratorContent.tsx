@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import styled from "styled-components";
 
 import { ImageSlider } from "../ImageSlider/ImageSlider";
@@ -8,9 +8,12 @@ import { Options } from '../Options/Options';
 type Props = {
     car: string,
     images: string[],
+    colors: string[],
+    setColor: Dispatch<SetStateAction<string>>,
+    setRims: Dispatch<SetStateAction<boolean>>
 }
 
-export const CarConfiguratorContent = ({car, images}: Props) => {
+export const CarConfiguratorContent = ({car, images, colors, setColor, setRims}: Props) => {
 
     return(
         <>
@@ -18,7 +21,7 @@ export const CarConfiguratorContent = ({car, images}: Props) => {
             <ContentContainer>
                 <Content>
                     <ImageSlider images={images}/>
-                    <Options />
+                    <Options colors={colors}/>
                 </Content>
             </ContentContainer>
         </>

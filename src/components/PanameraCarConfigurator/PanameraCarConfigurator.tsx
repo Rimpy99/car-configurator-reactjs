@@ -26,6 +26,8 @@ export const PanameraCarConfigurator = ({car}: Props) => {
     const [color, setColor] = useState<string>('white');
     const [rims, setRims] = useState<boolean>(false);
 
+    const colors = ['white', 'black'];
+
     useEffect(() => {
 
         if(rims){
@@ -52,7 +54,7 @@ export const PanameraCarConfigurator = ({car}: Props) => {
 
     return(
         <>
-            <CarConfiguratorContent car={car} images={images}/>
+            <CarConfiguratorContent car={car} images={images} colors={colors} setColor={setColor} setRims={setRims}/>
         </>
     )
 }
