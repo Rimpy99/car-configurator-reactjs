@@ -10,10 +10,11 @@ type Props = {
     images: string[],
     colors: string[],
     setColor: Dispatch<SetStateAction<string>>,
-    setRims: Dispatch<SetStateAction<boolean>>
+    setRims: Dispatch<SetStateAction<boolean>>,
+    rims: boolean,
 }
 
-export const CarConfiguratorContent = ({car, images, colors, setColor, setRims}: Props) => {
+export const CarConfiguratorContent = ({car, images, colors, setColor, setRims, rims}: Props) => {
 
     return(
         <>
@@ -21,7 +22,7 @@ export const CarConfiguratorContent = ({car, images, colors, setColor, setRims}:
             <ContentContainer>
                 <Content>
                     <ImageSlider images={images}/>
-                    <Options colors={colors} setColor={setColor} setRims={setRims}/>
+                    <Options colors={colors} setColor={setColor} setRims={setRims} rims={rims}/>
                 </Content>
             </ContentContainer>
         </>

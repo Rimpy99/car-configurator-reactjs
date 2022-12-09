@@ -32,6 +32,9 @@ export const CarreraCarConfigurator = ({car}: Props) => {
     const [images, setImages] = useState<string[]>([''])
     const [color, setColor] = useState<string>('white');
     const [rims, setRims] = useState<boolean>(false);
+    const [options, setOptions] = useState({
+
+    })
 
     const colors = ['white', 'black', 'red'];
 
@@ -67,7 +70,7 @@ export const CarreraCarConfigurator = ({car}: Props) => {
 
     return(
         <>
-            <CarConfiguratorContent car={car} images={images} colors={colors} setColor={setColor} setRims={setRims}/>
+            <CarConfiguratorContent car={car} images={images} colors={colors} setColor={setColor} setRims={setRims} rims={rims}/>
         </>
     )
 }

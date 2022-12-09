@@ -5,6 +5,7 @@ type Props = {
     colors: string[],
     setColor: Dispatch<SetStateAction<string>>,
     setRims: Dispatch<SetStateAction<boolean>>,
+    rims: boolean,
 }
 
 type ColorBoxProps = {
@@ -24,21 +25,80 @@ const chooseColor = (passedColor: string | any) => {
     }
 }
 
-export const Options = ({colors, setColor, setRims}: Props) => {
+export const Options = ({colors, setColor, setRims, rims}: Props) => {
 
     return(
         <>
-            <h1>OPTIONS</h1>
-            {colors.map((color) => {
-                return <ColorBox color={color} onClick={() => setColor(color)}/>   
-            })}
+            <Heading>OPTIONS</Heading>
+            <ColorContainer>
+                {colors.map((color) => {
+                    return <ColorBox color={color} onClick={() => setColor(color)}/>   
+                })}
+            </ColorContainer>
+            <OptionsContainer>
+                <Option>
+                    <input type="checkbox" onChange={() => setRims(currentStatus => !currentStatus)}/>
+                    <OptionsParagraph>Dark themed rims</OptionsParagraph>
+                </Option>
+                <Option>
+                    <input type="checkbox" />
+                    <OptionsParagraph>Porsche Dynamic Light System Plus</OptionsParagraph>
+                </Option>
+                <Option>
+                    <input type="checkbox" />
+                    <OptionsParagraph>Night Vision Assist</OptionsParagraph>
+                </Option>
+                <Option>
+                    <input type="checkbox" />
+                    <OptionsParagraph>Premium Package</OptionsParagraph>
+                </Option>
+            </OptionsContainer>
         </>
     )
 };
 
+const Heading = styled.h1`
+    padding: 40px 0 0;
+    border-bottom: 2px solid #dedede;
+    letter-spacing: 3px;
+`
+
+const ColorContainer = styled.div`
+    display: flex;
+    padding-bottom: 30px;
+`
+
 const ColorBox = styled.div<ColorBoxProps>`
-    width: 200px;
-    height: 200px;
+    width: 70px;
+    height: 70px;
     background-color: ${({color}) => chooseColor(color)};
     cursor: pointer;
+    margin: 15px;
+    box-shadow: 0px 0px 37px -4px rgba(182, 182, 182, 1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+        box-shadow: 0px 0px 37px -4px rgba(91, 91, 91, 1);
+    }
+` 
+
+const OptionsContainer = styled.div`
+
+`
+
+const Option = styled.div`
+    display:  flex;
+    justify-content: flex-start;
+    // width: 500px;
+    border-top: 2px solid #dedede;
+    padding: 15px 0;
+
+    &:nth-child(4){
+        border-bottom: 2px solid #dedede;
+    }
+`
+
+const OptionsParagraph = styled.p`
+    padding-left: 20px;
+    font-size: 25px;
 `

@@ -54,7 +54,7 @@ export const PanameraCarConfigurator = ({car}: Props) => {
 
     return(
         <>
-            <CarConfiguratorContent car={car} images={images} colors={colors} setColor={setColor} setRims={setRims}/>
+            <CarConfiguratorContent car={car} images={images} colors={colors} setColor={setColor} setRims={setRims} rims={rims}/>
         </>
     )
 }
