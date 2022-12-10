@@ -1,11 +1,20 @@
 import React, {Dispatch, SetStateAction} from 'react';
 import styled from 'styled-components';
 
+
+type OptionObject = {
+    dynamicLightsSystemPlus: boolean,
+    NightVisionAssist: boolean,
+    PremiumPackage: boolean,
+}
+
 type Props = {
     colors: string[],
     setColor: Dispatch<SetStateAction<string>>,
     setRims: Dispatch<SetStateAction<boolean>>,
     rims: boolean,
+    options: OptionObject,
+    setOptions: Dispatch<SetStateAction<OptionObject>>,
 }
 
 type ColorBoxProps = {
@@ -25,7 +34,7 @@ const chooseColor = (passedColor: string | any) => {
     }
 }
 
-export const Options = ({colors, setColor, setRims, rims}: Props) => {
+export const Options = ({colors, setColor, setRims, rims, options, setOptions}: Props) => {
 
     return(
         <>
@@ -41,15 +50,15 @@ export const Options = ({colors, setColor, setRims, rims}: Props) => {
                     <OptionsParagraph>Dark themed rims</OptionsParagraph>
                 </Option>
                 <Option>
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={() => setOptions(options => ({...options, dynamicLightsSystemPlus: !options.dynamicLightsSystemPlus}) )}/>
                     <OptionsParagraph>Porsche Dynamic Light System Plus</OptionsParagraph>
                 </Option>
                 <Option>
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={() => setOptions(options => ({...options, NightVisionAssist: !options.NightVisionAssist}) )}/>
                     <OptionsParagraph>Night Vision Assist</OptionsParagraph>
                 </Option>
                 <Option>
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={() => setOptions(options => ({...options, PremiumPackage: !options.PremiumPackage}) )}/>
                     <OptionsParagraph>Premium Package</OptionsParagraph>
                 </Option>
             </OptionsContainer>

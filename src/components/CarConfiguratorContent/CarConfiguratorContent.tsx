@@ -5,6 +5,12 @@ import { ImageSlider } from "../ImageSlider/ImageSlider";
 import { Header } from "../Header/Header";
 import { Options } from '../Options/Options';
 
+type OptionObject = {
+    dynamicLightsSystemPlus: boolean,
+    NightVisionAssist: boolean,
+    PremiumPackage: boolean,
+}
+
 type Props = {
     car: string,
     images: string[],
@@ -12,9 +18,11 @@ type Props = {
     setColor: Dispatch<SetStateAction<string>>,
     setRims: Dispatch<SetStateAction<boolean>>,
     rims: boolean,
+    options: OptionObject,
+    setOptions: Dispatch<SetStateAction<OptionObject>>
 }
 
-export const CarConfiguratorContent = ({car, images, colors, setColor, setRims, rims}: Props) => {
+export const CarConfiguratorContent = ({car, images, colors, setColor, setRims, rims, options, setOptions}: Props) => {
 
     return(
         <>
@@ -22,7 +30,14 @@ export const CarConfiguratorContent = ({car, images, colors, setColor, setRims, 
             <ContentContainer>
                 <Content>
                     <ImageSlider images={images}/>
-                    <Options colors={colors} setColor={setColor} setRims={setRims} rims={rims}/>
+                    <Options 
+                        colors={colors} 
+                        setColor={setColor} 
+                        setRims={setRims} 
+                        rims={rims}
+                        options={options}
+                        setOptions={setOptions}
+                    />
                 </Content>
             </ContentContainer>
         </>
