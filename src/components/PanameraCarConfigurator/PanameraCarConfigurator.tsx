@@ -15,6 +15,12 @@ import panameraWhite3 from '../../assets/images/models/panamera/panamerawhite3.j
 import panameraWhite1Rims from '../../assets/images/models/panamera/rims/panamerawhite1rims.jpg';
 import panameraWhite2Rims from '../../assets/images/models/panamera/rims/panamerawhite2rims.jpg';
 import panameraWhite3Rims from '../../assets/images/models/panamera/rims/panamerawhite3rims.jpg';
+import panameraBlue1 from '../../assets/images/models/panamera/panamerablue1.jpg';
+import panameraBlue2 from '../../assets/images/models/panamera/panamerablue2.jpg';
+import panameraBlue3 from '../../assets/images/models/panamera/panamerablue3.jpg';
+import panameraBlue1Rims from '../../assets/images/models/panamera/rims/panamerablue1rims.jpg';
+import panameraBlue2Rims from '../../assets/images/models/panamera/rims/panamerablue2rims.jpg';
+import panameraBlue3Rims from '../../assets/images/models/panamera/rims/panamerablue3rims.jpg';
 
 type Props ={
     car: string,
@@ -31,7 +37,7 @@ export const PanameraCarConfigurator = ({car}: Props) => {
         PremiumPackage: false,
     })
 
-    const colors = ['white', 'black'];
+    const colors = ['white', 'black', 'darkblue'];
 
     useEffect(() => {
 
@@ -43,6 +49,9 @@ export const PanameraCarConfigurator = ({car}: Props) => {
                 case 'black':
                     setImages([panameraBlack1Rims, panameraBlack2Rims, panameraBlack3Rims]);
                     break;
+                case 'darkblue':
+                    setImages([panameraBlue1Rims, panameraBlue2Rims, panameraBlue3Rims]);
+                    break;
             }
         }else{
             switch(color){
@@ -51,6 +60,9 @@ export const PanameraCarConfigurator = ({car}: Props) => {
                     break;
                 case 'black':
                     setImages([panameraBlack1, panameraBlack2, panameraBlack3]);
+                    break;
+                case 'darkblue':
+                    setImages([panameraBlue1, panameraBlue2, panameraBlue3]);
                     break;
             }
         }

@@ -31,6 +31,8 @@ const chooseColor = (passedColor: string | any) => {
             return '#CC0033';
         case 'blue':
             return '#10B7E1';
+        case 'darkblue':
+            return '#00194B';
     }
 }
 
