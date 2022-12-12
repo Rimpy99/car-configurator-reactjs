@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ImageSlider } from "../ImageSlider/ImageSlider";
 import { Header } from "../Header/Header";
 import { Options } from '../Options/Options';
+import { Summary } from '../Summary/Summary';
 
 type OptionObject = {
     dynamicLightsSystemPlus: boolean,
@@ -14,6 +15,7 @@ type OptionObject = {
 type Props = {
     car: string,
     images: string[],
+    color: string,
     colors: string[],
     setColor: Dispatch<SetStateAction<string>>,
     setRims: Dispatch<SetStateAction<boolean>>,
@@ -22,7 +24,7 @@ type Props = {
     setOptions: Dispatch<SetStateAction<OptionObject>>
 }
 
-export const CarConfiguratorContent = ({car, images, colors, setColor, setRims, rims, options, setOptions}: Props) => {
+export const CarConfiguratorContent = ({car, images, color, colors, setColor, setRims, rims, options, setOptions}: Props) => {
 
     return(
         <>
@@ -37,6 +39,12 @@ export const CarConfiguratorContent = ({car, images, colors, setColor, setRims, 
                         rims={rims}
                         options={options}
                         setOptions={setOptions}
+                    />
+                    <Summary
+                        car={car}
+                        color={color}
+                        rims={rims}
+                        options={options}
                     />
                 </Content>
             </ContentContainer>

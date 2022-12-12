@@ -76,6 +76,7 @@ export const MacanCarConfigurator = ({car}: Props) => {
                 car={car} 
                 images={images} 
                 colors={colors} 
+                color={color}
                 setColor={setColor} 
                 setRims={setRims} 
                 rims={rims}

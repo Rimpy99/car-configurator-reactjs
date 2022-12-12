@@ -62,6 +62,7 @@ export const PanameraCarConfigurator = ({car}: Props) => {
             <CarConfiguratorContent 
                 car={car} 
                 images={images} 
+                color={color}
                 colors={colors} 
                 setColor={setColor} 
                 setRims={setRims} 
