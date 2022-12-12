@@ -1,8 +1,8 @@
 {
-  "main.js": "/car-configurator-reactjs/static/js/main.28ca5c73.chunk.js",
-  "main.js.map": "/car-configurator-reactjs/static/js/main.28ca5c73.chunk.js.map",
-  "static/js/1.b90db185.chunk.js": "/car-configurator-reactjs/static/js/1.b90db185.chunk.js",
-  "static/js/1.b90db185.chunk.js.map": "/car-configurator-reactjs/static/js/1.b90db185.chunk.js.map",
+  "main.js": "/car-configurator-reactjs/static/js/main.14438413.chunk.js",
+  "main.js.map": "/car-configurator-reactjs/static/js/main.14438413.chunk.js.map",
+  "static/js/1.dc7a1639.chunk.js": "/car-configurator-reactjs/static/js/1.dc7a1639.chunk.js",
+  "static/js/1.dc7a1639.chunk.js.map": "/car-configurator-reactjs/static/js/1.dc7a1639.chunk.js.map",
   "runtime~main.js": "/car-configurator-reactjs/static/js/runtime~main.500822c1.js",
   "runtime~main.js.map": "/car-configurator-reactjs/static/js/runtime~main.500822c1.js.map",
   "static/media/macanlogo.png": "/car-configurator-reactjs/static/media/macanlogo.9dc32e96.png",
@@ -38,6 +38,12 @@
   "static/media/panamerawhite1rims.jpg": "/car-configurator-reactjs/static/media/panamerawhite1rims.e9d1f117.jpg",
   "static/media/panamerawhite2rims.jpg": "/car-configurator-reactjs/static/media/panamerawhite2rims.e0cf632b.jpg",
   "static/media/panamerawhite3rims.jpg": "/car-configurator-reactjs/static/media/panamerawhite3rims.2f0291af.jpg",
+  "static/media/panamerablue1.jpg": "/car-configurator-reactjs/static/media/panamerablue1.5dfa73a3.jpg",
+  "static/media/panamerablue2.jpg": "/car-configurator-reactjs/static/media/panamerablue2.b80ff912.jpg",
+  "static/media/panamerablue3.jpg": "/car-configurator-reactjs/static/media/panamerablue3.24df0377.jpg",
+  "static/media/panamerablue1rims.jpg": "/car-configurator-reactjs/static/media/panamerablue1rims.2761664a.jpg",
+  "static/media/panamerablue2rims.jpg": "/car-configurator-reactjs/static/media/panamerablue2rims.e02a6dc7.jpg",
+  "static/media/panamerablue3rims.jpg": "/car-configurator-reactjs/static/media/panamerablue3rims.8fda49bf.jpg",
   "static/media/p911black1.jpg": "/car-configurator-reactjs/static/media/p911black1.c3902a07.jpg",
   "static/media/p911black2.jpg": "/car-configurator-reactjs/static/media/p911black2.f4f0c95e.jpg",
   "static/media/p911black3.jpg": "/car-configurator-reactjs/static/media/p911black3.8d5238f6.jpg",
@@ -57,6 +63,6 @@
   "static/media/p911red2rims.jpg": "/car-configurator-reactjs/static/media/p911red2rims.ba00b755.jpg",
   "static/media/p911red3rims.jpg": "/car-configurator-reactjs/static/media/p911red3rims.69c8791f.jpg",
   "index.html": "/car-configurator-reactjs/index.html",
-  "precache-manifest.0977c89713f9682450dca24c2d56a2c4.js": "/car-configurator-reactjs/precache-manifest.0977c89713f9682450dca24c2d56a2c4.js",
+  "precache-manifest.ac08e8c592aeb3f5102090dbee03bfc6.js": "/car-configurator-reactjs/precache-manifest.ac08e8c592aeb3f5102090dbee03bfc6.js",
   "service-worker.js": "/car-configurator-reactjs/service-worker.js"
 }

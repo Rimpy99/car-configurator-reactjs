@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "28ca5c73ced835a746cd",
-    "url": "/car-configurator-reactjs/static/js/main.28ca5c73.chunk.js"
+    "revision": "14438413c66bba70c491",
+    "url": "/car-configurator-reactjs/static/js/main.14438413.chunk.js"
   },
   {
-    "revision": "b90db1857ad6affa67f6",
-    "url": "/car-configurator-reactjs/static/js/1.b90db185.chunk.js"
+    "revision": "dc7a16391554c67f22bc",
+    "url": "/car-configurator-reactjs/static/js/1.dc7a1639.chunk.js"
   },
   {
     "revision": "500822c1ef6eb643580b",
@@ -144,6 +144,30 @@ self.__precacheManifest = [
     "url": "/car-configurator-reactjs/static/media/panamerawhite3rims.2f0291af.jpg"
   },
   {
+    "revision": "5dfa73a39b1bca5810c4b044540fdfd3",
+    "url": "/car-configurator-reactjs/static/media/panamerablue1.5dfa73a3.jpg"
+  },
+  {
+    "revision": "b80ff912679a9a7ca275bfee2454e25f",
+    "url": "/car-configurator-reactjs/static/media/panamerablue2.b80ff912.jpg"
+  },
+  {
+    "revision": "24df0377ef6d267e0500f1629b58e452",
+    "url": "/car-configurator-reactjs/static/media/panamerablue3.24df0377.jpg"
+  },
+  {
+    "revision": "2761664a4ff3a24a40041e0530618460",
+    "url": "/car-configurator-reactjs/static/media/panamerablue1rims.2761664a.jpg"
+  },
+  {
+    "revision": "e02a6dc76818efbdae7c4a43e33c79aa",
+    "url": "/car-configurator-reactjs/static/media/panamerablue2rims.e02a6dc7.jpg"
+  },
+  {
+    "revision": "8fda49bf98eae48862c8b6cebd5d87c7",
+    "url": "/car-configurator-reactjs/static/media/panamerablue3rims.8fda49bf.jpg"
+  },
+  {
     "revision": "c3902a07f125244a3a9b1141a64ef9f0",
     "url": "/car-configurator-reactjs/static/media/p911black1.c3902a07.jpg"
   },
@@ -216,7 +240,7 @@ self.__precacheManifest = [
     "url": "/car-configurator-reactjs/static/media/p911red3rims.69c8791f.jpg"
   },
   {
-    "revision": "620ed5b7f0c429fb58bf5c96486b92de",
+    "revision": "f347b1ba900f88411b0b4a4d7a587ee3",
     "url": "/car-configurator-reactjs/index.html"
   }
 ];
