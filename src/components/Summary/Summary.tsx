@@ -52,42 +52,81 @@ export const Summary = ({car, color, rims, options}: Props) => {
         PremiumPackage: options.PremiumPackage ? 4200 : 0,
     };
 
+    const pricesValues = Object.values(prices);
+
+    const sum = pricesValues.reduce((accumator, value) => {
+        return accumator + value;
+    }, 0);
 
     return(
         <>
             <Heading>SUMMARY</Heading>
-            <table>
-                <tr>
-                    <td>Porsche model {car[0].toUpperCase() + car.substring(1)}</td>
-                    <td>{'$' + prices.model.toLocaleString("en-US")}</td>
-                </tr>
-                <tr>
-                    <td>Custom color</td>
-                    <td>{prices.color ? '$' + prices.color.toLocaleString("en-US") : <GrFormClose />}</td>
-                </tr>
-                <tr>
-                    <td>Dark themed rims</td>
-                    <td>{prices.rims ? '$' + prices.rims.toLocaleString("en-US") : <GrFormClose />}</td>
-                </tr>
-                <tr>
-                    <td>Dynamic Lights System Plus</td>
-                    <td>{prices.dynamicLightsSystemPlus ? '$' + prices.dynamicLightsSystemPlus.toLocaleString("en-US") : <GrFormClose />}</td>
-                </tr>
-                <tr>
-                    <td>Night Vision Assist</td>
-                    <td>{prices.NightVisionAssist ? '$' + prices.NightVisionAssist.toLocaleString("en-US") : <GrFormClose />}</td>
-                </tr>
-                <tr>
-                    <td>Dynamic Lights System Plus</td>
-                    <td>{prices.PremiumPackage ? '$' + prices.PremiumPackage.toLocaleString("en-US") : <GrFormClose />}</td>
-                </tr>
-            </table>
+            <Table>
+                <Row>
+                    <Cell>Porsche model {car[0].toUpperCase() + car.substring(1)}</Cell>
+                    <PriceCell>{'$' + prices.model.toLocaleString("en-US")}</PriceCell>
+                </Row>
+                <Row>
+                    <Cell>Custom color</Cell>
+                    <PriceCell>{prices.color ? '$' + prices.color.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
+                </Row>
+                <Row>
+                    <Cell>Dark themed rims</Cell>
+                    <PriceCell>{prices.rims ? '$' + prices.rims.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
+                </Row>
+                <Row>
+                    <Cell>Dynamic Lights System Plus</Cell>
+                    <PriceCell>{prices.dynamicLightsSystemPlus ? '$' + prices.dynamicLightsSystemPlus.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
+                </Row>
+                <Row>
+                    <Cell>Night Vision Assist</Cell>
+                    <PriceCell>{prices.NightVisionAssist ? '$' + prices.NightVisionAssist.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
+                </Row>
+                <Row>
+                    <Cell>Dynamic Lights System Plus</Cell>
+                    <PriceCell>{prices.PremiumPackage ? '$' + prices.PremiumPackage.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
+                </Row>
+                <LastRow>
+                    <Cell>SUM:</Cell>
+                    <PriceCell>${sum.toLocaleString("en-US")}</PriceCell>
+                </LastRow>
+            </Table>
         </>
     )
 }
 
 const Heading = styled.h1`
-    padding: 40px 0 0;
+    padding: 60px 0 0;
     border-bottom: 2px solid #dedede;
     letter-spacing: 3px;
+`;
+
+const Table = styled.table`
+    font-size: 25px;
+    border-collapse: collapse;
+    margin-top: 30px;
+    width: 500px;
+`;
+
+const Row = styled.tr`
+    border-top: 2px solid #dedede;
+    border-left: 2px solid #dedede;
+    border-right: 2px solid #dedede;
+`;
+
+const LastRow = styled.tr`
+    border: 2px solid #b3b3b3;
+    background-color: #dedede;
+`;
+
+const Cell = styled.td`
+    padding: 0 15px;
+`
+
+const PriceCell = styled.td`
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15px;
 `
