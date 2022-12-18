@@ -1,6 +1,6 @@
 {
-  "main.js": "/car-configurator-reactjs/static/js/main.21d9b968.chunk.js",
-  "main.js.map": "/car-configurator-reactjs/static/js/main.21d9b968.chunk.js.map",
+  "main.js": "/car-configurator-reactjs/static/js/main.5c8a3dc5.chunk.js",
+  "main.js.map": "/car-configurator-reactjs/static/js/main.5c8a3dc5.chunk.js.map",
   "static/js/1.2e10a17c.chunk.js": "/car-configurator-reactjs/static/js/1.2e10a17c.chunk.js",
   "static/js/1.2e10a17c.chunk.js.map": "/car-configurator-reactjs/static/js/1.2e10a17c.chunk.js.map",
   "runtime~main.js": "/car-configurator-reactjs/static/js/runtime~main.500822c1.js",
@@ -63,6 +63,6 @@
   "static/media/p911red2rims.jpg": "/car-configurator-reactjs/static/media/p911red2rims.ba00b755.jpg",
   "static/media/p911red3rims.jpg": "/car-configurator-reactjs/static/media/p911red3rims.69c8791f.jpg",
   "index.html": "/car-configurator-reactjs/index.html",
-  "precache-manifest.6980a2ec277a41a6658b8c5495f20312.js": "/car-configurator-reactjs/precache-manifest.6980a2ec277a41a6658b8c5495f20312.js",
+  "precache-manifest.00c11556985564b3fb03da3618146acd.js": "/car-configurator-reactjs/precache-manifest.00c11556985564b3fb03da3618146acd.js",
   "service-worker.js": "/car-configurator-reactjs/service-worker.js"
 }
