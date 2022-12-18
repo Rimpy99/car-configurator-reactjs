@@ -36,7 +36,9 @@ export const ImageSlider = ({images}: Props) => {
 
         const changeSlideSize = () => {
             const windowSize = getWindowSize();
-            windowSize.innerWidth = windowSize.innerWidth * 0.75;
+            if(windowSize.innerWidth > 540){
+                windowSize.innerWidth = windowSize.innerWidth * 0.6;
+            }
             setSlideSize(windowSize);
             console.log(getWindowSize());
         }
@@ -116,8 +118,8 @@ export const ImageSlider = ({images}: Props) => {
                     <SlideImg src={images[2]} alt="slide3" style={{ transform: `translateX(${slide3}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
                     <SlideImg src={images[0]} alt="slide1" style={{ transform: `translateX(${slide4}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
                 </SliderContent>
-                <SliderLeftButton onClick={() => goLeft()}><FaChevronLeft size={30} color="white"/></SliderLeftButton>
-                <SliderRightButton onClick={() => goRight()}><FaChevronRight size={30} color="white"/></SliderRightButton>
+                <SliderLeftButton onClick={() => goLeft()}><FaChevronLeft size={30} color={slideSize.innerWidth > 540 ? 'white' : 'red'}/></SliderLeftButton>
+                <SliderRightButton onClick={() => goRight()}><FaChevronRight size={30} color={slideSize.innerWidth > 540 ? 'white' : 'red'}/></SliderRightButton>
             </SliderContainer>
         </div>
     );
@@ -132,6 +134,7 @@ const SliderLeftButton = styled.button`
     position: absolute;
     top: 50%;
     left: 0;
+    transform: translateY(-50%);
     background: transparent;
     padding: 20px;
     border: none;
@@ -142,6 +145,7 @@ const SliderRightButton = styled.button`
     position: absolute;
     top: 50%;
     right: 0;
+    transform: translateY(-50%);
     background: transparent;
     padding: 20px;
     border: none;
