@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React, {useState, Dispatch, SetStateAction} from 'react';
 import styled from 'styled-components';
 
 
@@ -12,13 +12,24 @@ type Props = {
     colors: string[],
     setColor: Dispatch<SetStateAction<string>>,
     setRims: Dispatch<SetStateAction<boolean>>,
-    rims: boolean,
     options: OptionObject,
     setOptions: Dispatch<SetStateAction<OptionObject>>,
 }
 
 type ColorBoxProps = {
     color: string,
+}
+
+type inputStatusType = {
+    rims: boolean,
+    lights: boolean,
+    nightVision: boolean,
+    premium: boolean,
+}
+
+type inputProps = {
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    status: boolean,
 }
 
 const chooseColor = (passedColor: string | any) => {
@@ -36,7 +47,16 @@ const chooseColor = (passedColor: string | any) => {
     }
 }
 
-export const Options = ({colors, setColor, setRims, rims, options, setOptions}: Props) => {
+export const Options = ({colors, setColor, setRims, options, setOptions}: Props) => {
+
+    const [inputStatus, setInputStatus] = useState<inputStatusType>({
+        rims: false,
+        lights: false,
+        nightVision: false,
+        premium: false,
+    });
+
+
 
     return(
         <>
@@ -46,24 +66,48 @@ export const Options = ({colors, setColor, setRims, rims, options, setOptions}: 
                     return <ColorBox color={color} onClick={() => setColor(color)}/>   
                 })}
             </ColorContainer>
-            <OptionsContainer>
+            <div>
                 <Option>
-                    <input type="checkbox" onChange={() => setRims(currentStatus => !currentStatus)}/>
+                    <Input 
+                        status={inputStatus.rims}
+                        onChange={() => { 
+                            setRims(currentStatus => !currentStatus); 
+                            setInputStatus(inputStatus => ({...inputStatus, rims: !inputStatus.rims}));
+                        }}
+                    />
                     <OptionsParagraph>Dark themed rims</OptionsParagraph>
                 </Option>
                 <Option>
-                    <input type="checkbox" onChange={() => setOptions(options => ({...options, dynamicLightsSystemPlus: !options.dynamicLightsSystemPlus}) )}/>
+                    <Input 
+                        status={inputStatus.lights}
+                        onChange={() => {
+                            setOptions(options => ({...options, dynamicLightsSystemPlus: !options.dynamicLightsSystemPlus}) );
+                            setInputStatus(inputStatus => ({...inputStatus, lights: !inputStatus.rims}));
+                        }}
+                    />
                     <OptionsParagraph>Porsche Dynamic Light System Plus</OptionsParagraph>
                 </Option>
                 <Option>
-                    <input type="checkbox" onChange={() => setOptions(options => ({...options, NightVisionAssist: !options.NightVisionAssist}) )}/>
+                    <Input 
+                        status={inputStatus.nightVision}
+                        onChange={() => {
+                            setOptions(options => ({...options, NightVisionAssist: !options.NightVisionAssist}) );
+                            setInputStatus(inputStatus => ({...inputStatus, nightVision: !inputStatus.rims}));
+                        }}
+                    />
                     <OptionsParagraph>Night Vision Assist</OptionsParagraph>
                 </Option>
                 <Option>
-                    <input type="checkbox" onChange={() => setOptions(options => ({...options, PremiumPackage: !options.PremiumPackage}) )}/>
+                    <Input 
+                        status={inputStatus.premium}
+                        onChange={() => {
+                            setOptions(options => ({...options, PremiumPackage: !options.PremiumPackage}) );
+                            setInputStatus(inputStatus => ({...inputStatus, premium: !inputStatus.rims}));
+                        }}
+                    />
                     <OptionsParagraph>Premium Package</OptionsParagraph>
                 </Option>
-            </OptionsContainer>
+            </div>
         </>
     )
 };
@@ -91,15 +135,12 @@ const ColorBox = styled.div<ColorBoxProps>`
     &:hover{
         box-shadow: 0px 0px 37px -4px rgba(91, 91, 91, 1);
     }
-` 
-
-const OptionsContainer = styled.div`
-
 `
 
 const Option = styled.div`
     display:  flex;
     justify-content: flex-start;
+    align-items: center;
     // width: 500px;
     border-top: 2px solid #dedede;
     padding: 15px 0;
@@ -107,6 +148,15 @@ const Option = styled.div`
     &:nth-child(4){
         border-bottom: 2px solid #dedede;
     }
+`;
+
+
+const Input = styled.input.attrs({ type: 'checkbox' })<inputProps>`
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    accent-color: red;
 `
 
 const OptionsParagraph = styled.p`

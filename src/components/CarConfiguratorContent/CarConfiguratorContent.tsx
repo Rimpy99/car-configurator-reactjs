@@ -35,8 +35,7 @@ export const CarConfiguratorContent = ({car, images, color, colors, setColor, se
                     <Options 
                         colors={colors} 
                         setColor={setColor} 
-                        setRims={setRims} 
-                        rims={rims}
+                        setRims={setRims}
                         options={options}
                         setOptions={setOptions}
                     />

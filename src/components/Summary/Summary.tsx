@@ -106,6 +106,7 @@ const Table = styled.table`
     border-collapse: collapse;
     margin-top: 30px;
     width: 500px;
+    margin-bottom: 80px;
 `;
 
 const Row = styled.tr`
