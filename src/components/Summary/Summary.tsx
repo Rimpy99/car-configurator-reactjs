@@ -107,6 +107,10 @@ const Table = styled.table`
     margin-top: 30px;
     width: 500px;
     margin-bottom: 80px;
+
+    @media (max-width: 540px){
+        width: 100%;
+    }
 `;
 
 const Row = styled.tr`

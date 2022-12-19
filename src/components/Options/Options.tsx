@@ -66,7 +66,7 @@ export const Options = ({colors, setColor, setRims, options, setOptions}: Props)
                     return <ColorBox color={color} onClick={() => setColor(color)}/>   
                 })}
             </ColorContainer>
-            <div>
+            <OptionContainer>
                 <Option>
                     <Input 
                         status={inputStatus.rims}
@@ -107,7 +107,7 @@ export const Options = ({colors, setColor, setRims, options, setOptions}: Props)
                     />
                     <OptionsParagraph>Premium Package</OptionsParagraph>
                 </Option>
-            </div>
+            </OptionContainer>
         </>
     )
 };
@@ -137,11 +137,16 @@ const ColorBox = styled.div<ColorBoxProps>`
     }
 `
 
+const OptionContainer = styled.div`
+    @media (max-width: 540px){
+        width: 100vw:
+    }
+`
+
 const Option = styled.div`
     display:  flex;
     justify-content: flex-start;
     align-items: center;
-    // width: 500px;
     border-top: 2px solid #dedede;
     padding: 15px 0;
 
@@ -157,6 +162,10 @@ const Input = styled.input.attrs({ type: 'checkbox' })<inputProps>`
     height: 20px;
     border: 2px solid black;
     accent-color: red;
+
+    @media (max-width: 540px){
+        margin-left: 10px;
+    }
 `
 
 const OptionsParagraph = styled.p`
