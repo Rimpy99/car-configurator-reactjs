@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from "@testing-library/react";
-import { HomePage } from '../HomePage';
-import { CarConfigurator } from '../../CarConfigurator/CarConfigurator';
+import { HomePage } from '../../pages/HomePage/HomePage';
+import { CarConfigurator } from '../../pages/CarConfigurator/CarConfigurator';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 
@@ -13,15 +13,8 @@ const MockHomePage = () => {
     )
 }
 
-// const MockCarConfigurator = () => {
-//     return(
-//         <BrowserRouter>
-//             <CarConfigurator />
-//         </BrowserRouter>
-//     )
-// }
-
 const mockNavigate = jest.fn();
+
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: () => mockNavigate
@@ -43,14 +36,9 @@ describe('Testing HomePage component', () => {
     it('should navigate to different url', () => {
         render(<MockHomePage />);
         const LinkElement = screen.getByText(/Panamera/i);
-        // LinkElement.forEach(e => {
-        //     userEvent.click(e);
-        // })
         userEvent.click(LinkElement);
 
         expect(mockNavigate).toHaveBeenNthCalledWith(1, 'porschePanamera')
-        // render(<MockCarConfigurator />);
-        // expect(screen.getByText(/konfigurator/i)).toBeInTheDocument();
     })
 
 })

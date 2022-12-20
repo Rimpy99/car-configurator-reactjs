@@ -14,7 +14,7 @@ export const Header = ({carModel}: Props) => {
 
     return(
         <Container>
-            <IconContainer onClick={() => navigate('/')}>
+            <IconContainer onClick={() => navigate('/')} data-testid='arrow-back'>
                 <BiArrowBack size={25}/>
             </IconContainer>
             <h1>{carModel} CONFIGURATOR</h1>
