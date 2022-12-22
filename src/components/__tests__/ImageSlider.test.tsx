@@ -6,7 +6,7 @@ const images = ['img1', 'img2', 'img3'];
 
 describe('Testing ImageSlider component', () => {
     test('should render sliders with proper images', () => {
-        render(<ImageSlider images={images}/>);
+        render(<ImageSlider images={images} chosenColor={'red'}/>);
 
         const img1 = screen.getByTestId('slide1');
         const img2 = screen.getByTestId('slide2');
@@ -18,7 +18,7 @@ describe('Testing ImageSlider component', () => {
     })
 
     test('should move slider to left after clicking left arrow', () => {
-        render(<ImageSlider images={images}/>);
+        render(<ImageSlider images={images} chosenColor={'red'}/>);
 
         fireEvent.click(screen.getByTestId('slider-arrow-left'));
         
@@ -30,7 +30,7 @@ describe('Testing ImageSlider component', () => {
     })
 
     test('should move slider to right after clicking right arrow', () => {
-        render(<ImageSlider images={images}/>);
+        render(<ImageSlider images={images} chosenColor={'red'}/>);
 
         fireEvent.click(screen.getByTestId('slider-arrow-right'));
         

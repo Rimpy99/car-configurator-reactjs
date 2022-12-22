@@ -31,11 +31,20 @@ export const PanameraCarConfigurator = ({car}: Props) => {
     const [images, setImages] = useState<string[]>([''])
     const [color, setColor] = useState<string>('white');
     const [rims, setRims] = useState<boolean>(false);
-    const [options, setOptions] = useState({
-        dynamicLightsSystemPlus: false,
-        NightVisionAssist: false,
-        PremiumPackage: false,
-    })
+    const [options, setOptions] = useState([
+        {
+            optionName: 'Dynamic lights system plus',
+            status: false,
+        },
+        {
+            optionName: 'Night vision assist',
+            status: false,
+        },
+        {
+            optionName: 'Premium package',
+            status: false,
+        }
+    ])
 
     const colors = ['white', 'black', 'darkblue'];
 

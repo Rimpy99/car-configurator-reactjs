@@ -3,17 +3,16 @@ import styled from 'styled-components';
 
 
 type OptionObject = {
-    dynamicLightsSystemPlus: boolean,
-    NightVisionAssist: boolean,
-    PremiumPackage: boolean,
+    optionName: string,
+    status: boolean,
 }
 
 type Props = {
     colors: string[],
     setColor: Dispatch<SetStateAction<string>>,
     setRims: Dispatch<SetStateAction<boolean>>,
-    options: OptionObject,
-    setOptions: Dispatch<SetStateAction<OptionObject>>,
+    options: OptionObject[],
+    setOptions: Dispatch<SetStateAction<OptionObject[]>>,
 }
 
 type ColorBoxProps = {
@@ -29,7 +28,6 @@ type inputStatusType = {
 
 type inputProps = {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    status: boolean,
 }
 
 const chooseColor = (passedColor: string | any) => {
@@ -56,17 +54,50 @@ export const Options = ({colors, setColor, setRims, options, setOptions}: Props)
         premium: false,
     });
 
+    const inputOnChange = (index: number) => {
+        const newOptions = options.map((obj, objIndex) => {
 
+            if(objIndex === index){
+                return {...obj, status: !options[objIndex].status}
+            }
+
+            return obj;
+
+        })
+
+        setOptions(newOptions);
+    }
 
     return(
         <>
             <Heading>OPTIONS</Heading>
             <ColorContainer>
                 {colors.map((color) => {
-                    return <ColorBox color={color} onClick={() => setColor(color)}/>   
+                    return <ColorBox data-testid={`colorDiv-${color}`} color={color} onClick={() => setColor(color)} key={color}/>   
                 })}
             </ColorContainer>
             <OptionContainer>
+                <Option>
+                    <Input
+                        onChange={() => { 
+                            setRims(currentStatus => !currentStatus); 
+                            setInputStatus(inputStatus => ({...inputStatus, rims: !inputStatus.rims}));
+                        }}
+                    />
+                    <OptionsParagraph>Dark themed rims</OptionsParagraph>
+                </Option>
+                {options.map((option, index) => {
+                    return(
+                        <Option>
+                            <Input
+                                onChange={() => inputOnChange(index)}
+                            />
+                            <OptionsParagraph>{option.optionName}</OptionsParagraph>
+                        </Option>
+                    )
+                })}
+            </OptionContainer>
+            {/* <OptionContainer>
                 <Option>
                     <Input 
                         status={inputStatus.rims}
@@ -107,7 +138,7 @@ export const Options = ({colors, setColor, setRims, options, setOptions}: Props)
                     />
                     <OptionsParagraph>Premium Package</OptionsParagraph>
                 </Option>
-            </OptionContainer>
+            </OptionContainer> */}
         </>
     )
 };

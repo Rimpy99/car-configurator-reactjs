@@ -7,9 +7,8 @@ import { Options } from '../Options/Options';
 import { Summary } from '../Summary/Summary';
 
 type OptionObject = {
-    dynamicLightsSystemPlus: boolean,
-    NightVisionAssist: boolean,
-    PremiumPackage: boolean,
+    optionName: string,
+    status: boolean,
 }
 
 type Props = {
@@ -20,8 +19,8 @@ type Props = {
     setColor: Dispatch<SetStateAction<string>>,
     setRims: Dispatch<SetStateAction<boolean>>,
     rims: boolean,
-    options: OptionObject,
-    setOptions: Dispatch<SetStateAction<OptionObject>>
+    options: OptionObject[],
+    setOptions: Dispatch<SetStateAction<OptionObject[]>>
 }
 
 export const CarConfiguratorContent = ({car, images, color, colors, setColor, setRims, rims, options, setOptions}: Props) => {
@@ -31,7 +30,7 @@ export const CarConfiguratorContent = ({car, images, color, colors, setColor, se
             <Header carModel={car.toUpperCase()}/>
             <ContentContainer>
                 <Content>
-                    <ImageSlider images={images}/>
+                    <ImageSlider images={images} chosenColor={color}/>
                     <Options 
                         colors={colors} 
                         setColor={setColor} 

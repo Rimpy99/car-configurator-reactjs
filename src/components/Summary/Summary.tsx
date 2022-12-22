@@ -4,30 +4,27 @@ import styled from 'styled-components';
 import { GrFormClose } from "react-icons/gr";
 
 type OptionObject = {
-    dynamicLightsSystemPlus: boolean,
-    NightVisionAssist: boolean,
-    PremiumPackage: boolean,
+    optionName: string,
+    status: boolean,
 }
 
 type Props = {
     car: string,
     color: string,
     rims: boolean,
-    options: OptionObject,
+    options: OptionObject[],
 }
 
-type Prices = {
-    model: number,
-    color: number,
-    rims: number,
-    dynamicLightsSystemPlus: number,
-    NightVisionAssist: number,
-    PremiumPackage: number,
-}
+// type Prices = {
+//     model: number,
+//     color: number,
+//     rims: number,
+//     dynamicLightsSystemPlus: number,
+//     NightVisionAssist: number,
+//     PremiumPackage: number,
+// }
 
 export const Summary = ({car, color, rims, options}: Props) => {
-
-    const { dynamicLightsSystemPlus, NightVisionAssist, PremiumPackage } = options;
 
     let modelPrice = 0;
 
@@ -47,9 +44,9 @@ export const Summary = ({car, color, rims, options}: Props) => {
         model: modelPrice,
         color: color !== 'white' ? 1100 : 0,
         rims: rims ? 2450 : 0,
-        dynamicLightsSystemPlus: options.dynamicLightsSystemPlus ? 720 : 0,
-        NightVisionAssist: options.NightVisionAssist ? 1050 : 0,
-        PremiumPackage: options.PremiumPackage ? 4200 : 0,
+        dynamicLightsSystemPlus: options[0].status ? 720 : 0,
+        NightVisionAssist: options[1].status ? 1050 : 0,
+        PremiumPackage: options[2].status ? 4200 : 0,
     };
 
     const pricesValues = Object.values(prices);

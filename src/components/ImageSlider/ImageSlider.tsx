@@ -4,6 +4,7 @@ import { FaChevronLeft, FaChevronRight  } from "react-icons/fa";
 
 type Props = {
     images: string[],
+    chosenColor: string,
 }
 
 type windowWidth = {
@@ -16,7 +17,7 @@ type styledComponentsProps = {
 
 // const slideSize = 2000;
 
-export const ImageSlider = ({images}: Props) => {
+export const ImageSlider = ({images, chosenColor}: Props) => {
 
     const setSlideWidthOnFirstRender = () => {
         const windowSize = getWindowSize();
@@ -111,7 +112,7 @@ export const ImageSlider = ({images}: Props) => {
     return(
         <div> 
             <SliderContainer size={slideSize}>
-                <SliderContent size={slideSize}>
+                <SliderContent size={slideSize} data-testid={`slider-${chosenColor}`}>
                     <SlideImg src={images[2]} alt={images[2]} style={{ transform: `translateX(${slide0}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
                     <SlideImg src={images[0]} alt={images[0]} data-testid='slide1' style={{ transform: `translateX(${slide1}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
                     <SlideImg src={images[1]} alt={images[1]} data-testid='slide2' style={{ transform: `translateX(${slide2}px)`, transition: (visibleSlide === 4 || visibleSlide === 0) ? 'all 0s ease-in-out' : 'all .5s ease-in-out'}}/>
