@@ -1,8 +1,8 @@
 {
-  "main.js": "/car-configurator-reactjs/static/js/main.41dc43d9.chunk.js",
-  "main.js.map": "/car-configurator-reactjs/static/js/main.41dc43d9.chunk.js.map",
-  "static/js/1.2e10a17c.chunk.js": "/car-configurator-reactjs/static/js/1.2e10a17c.chunk.js",
-  "static/js/1.2e10a17c.chunk.js.map": "/car-configurator-reactjs/static/js/1.2e10a17c.chunk.js.map",
+  "main.js": "/car-configurator-reactjs/static/js/main.168e48f8.chunk.js",
+  "main.js.map": "/car-configurator-reactjs/static/js/main.168e48f8.chunk.js.map",
+  "static/js/1.6475f58a.chunk.js": "/car-configurator-reactjs/static/js/1.6475f58a.chunk.js",
+  "static/js/1.6475f58a.chunk.js.map": "/car-configurator-reactjs/static/js/1.6475f58a.chunk.js.map",
   "runtime~main.js": "/car-configurator-reactjs/static/js/runtime~main.500822c1.js",
   "runtime~main.js.map": "/car-configurator-reactjs/static/js/runtime~main.500822c1.js.map",
   "static/media/macanlogo.png": "/car-configurator-reactjs/static/media/macanlogo.9dc32e96.png",
@@ -63,6 +63,6 @@
   "static/media/p911red2rims.jpg": "/car-configurator-reactjs/static/media/p911red2rims.ba00b755.jpg",
   "static/media/p911red3rims.jpg": "/car-configurator-reactjs/static/media/p911red3rims.69c8791f.jpg",
   "index.html": "/car-configurator-reactjs/index.html",
-  "precache-manifest.f7213ec8bce8cc5e4155e7de7b53e184.js": "/car-configurator-reactjs/precache-manifest.f7213ec8bce8cc5e4155e7de7b53e184.js",
+  "precache-manifest.91e09188e90429a5245be222d7042c55.js": "/car-configurator-reactjs/precache-manifest.91e09188e90429a5245be222d7042c55.js",
   "service-worker.js": "/car-configurator-reactjs/service-worker.js"
 }
