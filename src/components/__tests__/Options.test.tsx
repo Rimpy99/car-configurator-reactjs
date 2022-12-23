@@ -12,13 +12,12 @@ describe('Testing Options component', () => {
                 colors={colorProps}
                 setColor={() => {}} 
                 setRims={() => {}}
-                options={
+                options={[
                     {
-                        dynamicLightsSystemPlus: false,
-                        NightVisionAssist: false,
-                        PremiumPackage: false, 
-                    }
-                }
+                        optionName: 'mock text',
+                        status: false,
+                    },
+                ]}
                 setOptions={() => {}}
             />
         );
@@ -35,11 +34,12 @@ describe('Testing Options component', () => {
                 setColor={() => {}} 
                 setRims={() => {}}
                 options={
-                    {
-                        dynamicLightsSystemPlus: false,
-                        NightVisionAssist: false,
-                        PremiumPackage: false, 
-                    }
+                    [
+                        {
+                            optionName: 'mock text',
+                            status: false,
+                        },
+                    ]
                 }
                 setOptions={() => {}}
             />
@@ -50,5 +50,47 @@ describe('Testing Options component', () => {
 
         render(<ImageSlider images={[]} chosenColor={`${colorProps[0]}`}/>);
         expect(screen.getByTestId(`slider-${colorProps[0]}`)).toBeInTheDocument();
+    });
+
+    it('should render proper options', () => {
+        render(
+            <Options 
+                colors={colorProps}
+                setColor={() => {}} 
+                setRims={() => {}}
+                options={
+                    [
+                        {
+                            optionName: 'mock text',
+                            status: false,
+                        },
+                    ]
+                }
+                setOptions={() => {}}
+            />
+        );
+
+        expect(screen.getByText('mock text')).toBeInTheDocument();
+    });
+
+    it('should render options with choosing rims', () => {
+        render(
+            <Options 
+                colors={colorProps}
+                setColor={() => {}} 
+                setRims={() => {}}
+                options={
+                    [
+                        {
+                            optionName: 'mock text',
+                            status: false,
+                        },
+                    ]
+                }
+                setOptions={() => {}}
+            />
+        );
+
+        expect(screen.getByText(/dark themed rims/i)).toBeInTheDocument();
     })
 })

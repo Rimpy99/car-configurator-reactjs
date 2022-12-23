@@ -47,13 +47,6 @@ const chooseColor = (passedColor: string | any) => {
 
 export const Options = ({colors, setColor, setRims, options, setOptions}: Props) => {
 
-    const [inputStatus, setInputStatus] = useState<inputStatusType>({
-        rims: false,
-        lights: false,
-        nightVision: false,
-        premium: false,
-    });
-
     const inputOnChange = (index: number) => {
         const newOptions = options.map((obj, objIndex) => {
 
@@ -81,14 +74,13 @@ export const Options = ({colors, setColor, setRims, options, setOptions}: Props)
                     <Input
                         onChange={() => { 
                             setRims(currentStatus => !currentStatus); 
-                            setInputStatus(inputStatus => ({...inputStatus, rims: !inputStatus.rims}));
                         }}
                     />
                     <OptionsParagraph>Dark themed rims</OptionsParagraph>
                 </Option>
                 {options.map((option, index) => {
                     return(
-                        <Option>
+                        <Option key={`option-${index + 1}`}>
                             <Input
                                 onChange={() => inputOnChange(index)}
                             />
@@ -97,48 +89,6 @@ export const Options = ({colors, setColor, setRims, options, setOptions}: Props)
                     )
                 })}
             </OptionContainer>
-            {/* <OptionContainer>
-                <Option>
-                    <Input 
-                        status={inputStatus.rims}
-                        onChange={() => { 
-                            setRims(currentStatus => !currentStatus); 
-                            setInputStatus(inputStatus => ({...inputStatus, rims: !inputStatus.rims}));
-                        }}
-                    />
-                    <OptionsParagraph>Dark themed rims</OptionsParagraph>
-                </Option>
-                <Option>
-                    <Input 
-                        status={inputStatus.lights}
-                        onChange={() => {
-                            setOptions(options => ({...options, dynamicLightsSystemPlus: !options.dynamicLightsSystemPlus}) );
-                            setInputStatus(inputStatus => ({...inputStatus, lights: !inputStatus.rims}));
-                        }}
-                    />
-                    <OptionsParagraph>Porsche Dynamic Light System Plus</OptionsParagraph>
-                </Option>
-                <Option>
-                    <Input 
-                        status={inputStatus.nightVision}
-                        onChange={() => {
-                            setOptions(options => ({...options, NightVisionAssist: !options.NightVisionAssist}) );
-                            setInputStatus(inputStatus => ({...inputStatus, nightVision: !inputStatus.rims}));
-                        }}
-                    />
-                    <OptionsParagraph>Night Vision Assist</OptionsParagraph>
-                </Option>
-                <Option>
-                    <Input 
-                        status={inputStatus.premium}
-                        onChange={() => {
-                            setOptions(options => ({...options, PremiumPackage: !options.PremiumPackage}) );
-                            setInputStatus(inputStatus => ({...inputStatus, premium: !inputStatus.rims}));
-                        }}
-                    />
-                    <OptionsParagraph>Premium Package</OptionsParagraph>
-                </Option>
-            </OptionContainer> */}
         </>
     )
 };

@@ -15,15 +15,6 @@ type Props = {
     options: OptionObject[],
 }
 
-// type Prices = {
-//     model: number,
-//     color: number,
-//     rims: number,
-//     dynamicLightsSystemPlus: number,
-//     NightVisionAssist: number,
-//     PremiumPackage: number,
-// }
-
 export const Summary = ({car, color, rims, options}: Props) => {
 
     let modelPrice = 0;
@@ -40,49 +31,59 @@ export const Summary = ({car, color, rims, options}: Props) => {
             break;
     }
 
-    const prices = {
-        model: modelPrice,
-        color: color !== 'white' ? 1100 : 0,
-        rims: rims ? 2450 : 0,
-        dynamicLightsSystemPlus: options[0].status ? 720 : 0,
-        NightVisionAssist: options[1].status ? 1050 : 0,
-        PremiumPackage: options[2].status ? 4200 : 0,
-    };
+    const prices = [
+        {
+            option: `Porsche model ${car[0].toUpperCase() + car.substring(1)}`,
+            price: modelPrice,
+        },
+        {
+            option: 'Custom color',
+            price: color !== 'white' ? 1100 : 0,
+        },
+        {
+            option: 'Dark themed rims',
+            price: rims ? 2450 : 0,
+        },
+        {
+            option: 'Dynamic Lights System Plus',
+            price: options[0].status ? 720 : 0,
+        },
+        {
+            option: 'Night Vision Assist',
+            price: options[1].status ? 1050 : 0,
+        },
+        {
+            option: 'Dynamic Lights System Plus',
+            price: options[2].status ? 4200 : 0,
+        },
+    ]
 
-    const pricesValues = Object.values(prices);
+    // const pricesValues = Object.values(prices.price);
 
-    const sum = pricesValues.reduce((accumator, value) => {
-        return accumator + value;
-    }, 0);
+    // const sum = pricesValues.reduce((accumator, value) => {
+    //     return accumator + value;
+    // }, 0);
+
+    let sum: number = 0;
+
+    prices.forEach(obj => {
+        sum += obj.price;
+    })
 
     return(
         <>
             <Heading>SUMMARY</Heading>
             <Table>
-                <Row>
-                    <Cell>Porsche model {car[0].toUpperCase() + car.substring(1)}</Cell>
-                    <PriceCell>{'$' + prices.model.toLocaleString("en-US")}</PriceCell>
-                </Row>
-                <Row>
-                    <Cell>Custom color</Cell>
-                    <PriceCell>{prices.color ? '$' + prices.color.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
-                </Row>
-                <Row>
-                    <Cell>Dark themed rims</Cell>
-                    <PriceCell>{prices.rims ? '$' + prices.rims.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
-                </Row>
-                <Row>
-                    <Cell>Dynamic Lights System Plus</Cell>
-                    <PriceCell>{prices.dynamicLightsSystemPlus ? '$' + prices.dynamicLightsSystemPlus.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
-                </Row>
-                <Row>
-                    <Cell>Night Vision Assist</Cell>
-                    <PriceCell>{prices.NightVisionAssist ? '$' + prices.NightVisionAssist.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
-                </Row>
-                <Row>
-                    <Cell>Dynamic Lights System Plus</Cell>
-                    <PriceCell>{prices.PremiumPackage ? '$' + prices.PremiumPackage.toLocaleString("en-US") : <GrFormClose />}</PriceCell>
-                </Row>
+                {
+                    prices.map(({option, price}) => {
+                        return(
+                            <Row>
+                                <Cell>{option}</Cell>
+                                <PriceCell>{price ? '$' + price.toLocaleString('en-US') : <GrFormClose />}</PriceCell>
+                            </Row>
+                        );
+                    })
+                }
                 <LastRow>
                     <Cell>SUM:</Cell>
                     <PriceCell>${sum.toLocaleString("en-US")}</PriceCell>
