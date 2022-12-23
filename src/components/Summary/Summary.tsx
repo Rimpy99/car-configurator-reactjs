@@ -53,16 +53,10 @@ export const Summary = ({car, color, rims, options}: Props) => {
             price: options[1].status ? 1050 : 0,
         },
         {
-            option: 'Dynamic Lights System Plus',
+            option: 'Premium Package',
             price: options[2].status ? 4200 : 0,
         },
     ]
-
-    // const pricesValues = Object.values(prices.price);
-
-    // const sum = pricesValues.reduce((accumator, value) => {
-    //     return accumator + value;
-    // }, 0);
 
     let sum: number = 0;
 
@@ -74,20 +68,25 @@ export const Summary = ({car, color, rims, options}: Props) => {
         <>
             <Heading>SUMMARY</Heading>
             <Table>
-                {
-                    prices.map(({option, price}) => {
-                        return(
-                            <Row>
-                                <Cell>{option}</Cell>
-                                <PriceCell>{price ? '$' + price.toLocaleString('en-US') : <GrFormClose />}</PriceCell>
-                            </Row>
-                        );
-                    })
-                }
-                <LastRow>
-                    <Cell>SUM:</Cell>
-                    <PriceCell>${sum.toLocaleString("en-US")}</PriceCell>
-                </LastRow>
+                <tbody>
+                    {
+                        prices.map(({option, price}) => {
+                            
+                            const rowKey = option.split(' ').join('');
+
+                            return(
+                                <Row key={`option${rowKey}`}>
+                                    <Cell>{option}</Cell>
+                                    <PriceCell>{price ? '$' + price.toLocaleString('en-US') : <GrFormClose />}</PriceCell>
+                                </Row>
+                            );
+                        })
+                    }
+                    <LastRow>
+                        <Cell>SUM:</Cell>
+                        <PriceCell>${sum.toLocaleString("en-US")}</PriceCell>
+                    </LastRow>
+                </tbody>
             </Table>
         </>
     )
